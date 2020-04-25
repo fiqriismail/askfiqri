@@ -1,23 +1,28 @@
-﻿@using Microsoft.VisualBasic
+﻿@using System.Globalization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.DependencyInjection
+
+
+@inject IViewLocalizer Localizer
+
 @{
     ViewData["Title"] = "Home Page";
 }
 
     <div class="container-fluid">
-        <h2>My Beautiful Garden</h2>
-        <small class="text-muted">Created at: @DateAndTime.Now</small>
+        <h2>@Localizer["Header"]</h2>
+        <small class="text-muted">@Localizer["CreatedAt"] @DateTime.Now</small>
+        <p><small class="text-dark">@Localizer["CurrentCulture"] @CultureInfo.CurrentCulture</small></p>
         <div class="row mt-4">
             <div class="col-6">
-                <h3>Flowers</h3>
+                <h3>@Localizer["Header1"]</h3>
                 <img src="https://origami-japan.com/wp-content/uploads/2019/05/Sennen6-1024x682.jpg" width="50%"/>
-                <p>I have plenty of flowers in my beautiful garden. Every morning these flowers bloom and gives me a wonderful feeling.
-                    It took my 5 years to build my beautiful garden.</p>
+                <p>@Localizer["Para1"]</p>
             </div>
             <div class="col-6">
-                <h3>Trees</h3>
+                <h3>@Localizer["Header2"]</h3>
                 <img src="https://d1whtlypfis84e.cloudfront.net/guides/wp-content/uploads/2019/08/03091106/Trees-1024x682.jpg" width="50%" />
-                <p>I have seven large trees in my beautiful garden.  These trees gives the shade and fruits.
-                    These trees are older than the oldest man live in our village.</p>
+                <p>@Localizer["Para2"]</p>
                 
             </div>
         </div>

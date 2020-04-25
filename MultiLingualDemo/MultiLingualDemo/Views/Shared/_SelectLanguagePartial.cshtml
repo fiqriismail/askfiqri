@@ -1,0 +1,21 @@
+﻿@using System.Globalization
+@{
+    var selectedCulture = CultureInfo.CurrentCulture.Name == "si-LK" ? "en-US" : "si-LK";
+}
+
+<div class="row p-lg-2 mr-lg-3 ml-lg-3">
+    <div class="col-12 text-right">
+        <form id="selectLanguage" asp-controller="Home" asp-action="SetLanguage" asp-route-returnUrl="@Context.Request.Path">
+            <input type="hidden" value="@selectedCulture" id="culture" name="culture" />
+            @if (selectedCulture != "en-US")
+            {
+                <button class="btn btn-success">සිංහල</button>
+            }
+            else
+            {
+                <button class="btn btn-success">English</button>
+            }
+
+        </form>
+    </div>
+</div>

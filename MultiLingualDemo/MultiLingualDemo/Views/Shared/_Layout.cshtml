@@ -1,35 +1,33 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+<!DOCTYPE html>
+@inject IViewLocalizer Localizer
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Garden - @ViewData["Title"]</title>
+    <title>@Localizer["Header"] - @ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light  bg-white border-bottom box-shadow mb-3">
-        <a class="navbar-brand" href="#">My Garden</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">Contact</a>
+        <nav class="navbar navbar-expand-lg navbar-light  bg-white border-bottom box-shadow mb-3">
+            <a class="navbar-brand" href="#">@Localizer["Header"]</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">@Localizer["Home"]</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Contact">@Localizer["Contact"]</a>
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Register">@Localizer["Register"]</a>
+                </div>
             </div>
-                
-        </div>
-    </nav>
-</header>
 
-<div class="row p-lg-2 mr-lg-3 ml-lg-3" >
-    <div class="col-12 text-right" >
-        <button class="btn btn-success">English</button>
-    </div>
-</div>
-    
+        </nav>
+    </header>
+
+    @await Html.PartialAsync("_SelectLanguagePartial")
 
     <div class="container">
         <main role="main" class="pb-3">

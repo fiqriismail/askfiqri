@@ -1,2 +1,8 @@
 # askfiqri
-All the code for #askFiqri youtube channel (www.youtube.com/c/AskFiqri will go under here
+
+Subscribe for latest tuotrials in Sinhala at : https://youtube.com/c/AskFiqri 
+
+**Multilinguale App - Demo - Starter**
+
+This is the starter project for the multilingual tutorial for ASP.NET Core.
+
